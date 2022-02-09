@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block title %} Ajouter un étudiant{% endblock %}
+{% block content %}
+    {#  {{ form(formA) }}#}
+    {# est equivalent #}
+{{ form_start(formA,{'attr':{'novalidate':'novalidate'}}) }}
+
+    {{ form_label(formA.email, "Email de l'étudiant") }} {# <label></label> #}
+    {{ form_widget(formA.email) }} {# <input ....> #}
+    {{ form_errors(formA.email) }}
+   {# {{ form_rows(formA.email) }} #}
+    {{ form_label(formA.NSC,"Numéro d'inscription") }} {# <label></label> #}
+    {{ form_widget(formA.NSC) }}
+    {{ form_errors(formA.NSC) }}
+{{ form_end(formA)}} {# </form>#}
+{% endblock %}
